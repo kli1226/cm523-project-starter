@@ -46,3 +46,26 @@ h3{
     color: #2D2D2D;
     display: block;
 }
+
+.ingredients{
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.item{
+    background: #F9F7F2;
+    font-size: 2em;
+    font-weight: bold;
+    width: 210px;
+    border: 1px solid #465C38;
+    border-radius: 10%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    
+  }

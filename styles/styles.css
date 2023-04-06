@@ -2,8 +2,47 @@
 /* ===== START WITH GLOBAL STYLES THEN USE MEDIA QUERIES FOR LAYOUT ADJUSTMENTS ===== */
 
 body {
-    background: magenta;
+    background: #F9F7F2;
+    margin: 0px;
 }
-p {
-    font-size: 2em;
+
+/* MAIN.HTML */
+
+.header{
+    background-color: #EB4F27;
+    padding-top: 150px;
+    padding-left: 80px;
+    padding-bottom: 80px;
+}
+
+h1{
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 80px;
+    color: white;
+    display: block;
+}
+
+p{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    width: 60%;
+    line-height: 40px;
+    color: white;
+}
+
+/************************************************************/
+
+.container{
+    padding-left: 80px;
+    padding-bottom: 80px;
+}
+
+h3{
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #2D2D2D;
+    display: block;
 }

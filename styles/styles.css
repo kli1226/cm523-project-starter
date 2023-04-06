@@ -11,31 +11,33 @@ body {
 .header{
     background-color: #EB4F27;
     padding-top: 150px;
-    padding-left: 80px;
+    padding-left: 110px;
     padding-bottom: 80px;
 }
 
-h1{
+h1{ /* What's in your fridge? */
     font-family: 'Cinzel', serif;
     font-weight: 400;
     font-size: 80px;
     color: white;
     display: block;
+    margin-bottom: 10px;
 }
 
-p{
-    font-family: 'Montserrat Alternates', sans-serif;
+p{ /* Click on a card to select ... */
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 24px;
-    width: 60%;
+    font-size: 20px;
+    width: 50%;
     line-height: 40px;
     color: white;
+    margin-top: 0px;
 }
 
 /************************************************************/
 
 .container{
-    padding-left: 80px;
+    padding-left: 110px;
     padding-bottom: 80px;
 }
 
@@ -49,10 +51,10 @@ h3{
 
 .ingredients{
     display: flex;
-    /* justify-content: space-evenly; */
     flex-flow: row wrap;
-    align-items: flex-start;
-    gap: 30px;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 40px;
 }
 
 .item{
@@ -61,11 +63,63 @@ h3{
     font-weight: bold;
     width: 210px;
     border: 1px solid #465C38;
-    border-radius: 10%;
+    border-radius: 10px;
     height: 270px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    
-  }
+    flex-direction: column;
+}
+
+button{
+    margin: 0px;
+    padding: 0px;
+}
+
+.plus{
+    background: #E7E7DF;
+    font-size: 2em;
+    font-weight: bold;
+    width: 210px;
+    border: none;
+    border-radius: 10px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plusSign{
+    max-width: 80px;
+}
+
+/* Illustrations of the ingredients */
+
+img {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.biggerImg {
+    max-width: 120px;
+    max-height: 210px;
+}
+
+.ingredientsName{
+    display: flex;
+    flex-direction: column;
+    background-color:#465C38;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    width: 210px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: auto;
+}

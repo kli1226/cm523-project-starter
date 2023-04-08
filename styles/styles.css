@@ -28,7 +28,6 @@ p{ /* Click on a card to select ... */
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 20px;
-    width: 50%;
     line-height: 40px;
     color: white;
     margin-top: 0px;
@@ -98,7 +97,7 @@ button{
 img {
     display: flex;
     flex-direction: column;
-    max-width: 150px;
+    max-width: 130px;
     height: auto;
     margin-bottom: auto;
     margin-top: auto;

@@ -90,6 +90,8 @@ button{
 
 .plusSign{
     max-width: 80px;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 /* Illustrations of the ingredients */
@@ -99,7 +101,6 @@ img {
     flex-direction: column;
     max-width: 130px;
     height: auto;
-    margin-bottom: auto;
     margin-top: auto;
 }
 
@@ -121,4 +122,15 @@ img {
     padding-bottom: 15px;
     border-radius: 0px 0px 10px 10px;
     margin-top: auto;
+}
+
+.card-highlight {
+    pointer-events: auto;
+    transform: scale(1);
+    transition: all 0.4s;
+}
+  
+.card-highlight:hover {
+    opacity: 1;
+    transform: scale(1.02);
 }

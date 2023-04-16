@@ -120,17 +120,58 @@ img {
     width: 210px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 8px 8px;
     margin-top: auto;
+    text-align: center;
 }
 
-.card-highlight {
-    pointer-events: auto;
-    transform: scale(1);
-    transition: all 0.4s;
+input[id="card_tomato"]:checked .card,
+input[id="card_onion"]:checked .card,
+input[id="card_spinach"]:checked .card,
+input[id="card_carrot"]:checked .card {
+    border-color: pink;
+    border-width: 5px;
 }
-  
-.card-highlight:hover {
-    opacity: 1;
-    transform: scale(1.02);
+
+/* 
+input[id="card_tomato"]:checked ~ label[for="card_tomato"].card .check-btn{
+    border-color: pink;
+    border-width: 5px;
+} */
+
+.card{
+    background: #F9F7F2;
+    font-size: 2em;
+    font-weight: bold;
+    width: 210px;
+    border: 1px solid #465C38;
+    border-radius: 10px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.check-btn{
+    /* background-color: #465C38; */
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    border-radius: .5rem;
+    border:1px solid #465C38;
+    margin-left: 150px;
+    margin-top: 15px;
+}
+
+.fa-check{
+    color: #465C38;
+}
+
+.card:hover{
+    transform: scale(1.02)
+} 
+
+.card:active{
+    transform: scale(.97)
 }

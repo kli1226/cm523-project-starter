@@ -6,6 +6,40 @@ body {
     margin: 0px;
 }
 
+/* NAV BAR */
+
+nav {
+    background-color: #E7451C;
+    text-align: right;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    margin: 0;
+    /* overflow: hidden; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+ 
+nav > ul > li > a {
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: block;
+    line-height: 2em;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
 /* MAIN.HTML */
 
 .header{

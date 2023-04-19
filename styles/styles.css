@@ -167,12 +167,6 @@ input[id="card_carrot"]:checked .card {
     border-width: 5px;
 }
 
-/* 
-input[id="card_tomato"]:checked ~ label[for="card_tomato"].card .check-btn{
-    border-color: pink;
-    border-width: 5px;
-} */
-
 .card{
     background: #F9F7F2;
     font-size: 2em;
@@ -196,10 +190,6 @@ input[id="card_tomato"]:checked ~ label[for="card_tomato"].card .check-btn{
     border:1px solid #465C38;
     margin-left: 150px;
     margin-top: 15px;
-}
-
-.fa-check{
-    color: #465C38;
 }
 
 .card:hover{

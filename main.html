@@ -79,9 +79,9 @@
                     <div class="ingredientsName">Mushroom</div>
                 </div>
 
-                <div class="plus">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign">
-                </div>
+                <button class="plus" onclick="promptBox()">
+                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
+                </button>
 
             </div>
         <h3>Meat</h3>
@@ -110,8 +110,8 @@
                     <div class="ingredientsName">Bacon</div>
                 </div>
 
-                <button class="plus card-highlight">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign">
+                <button class="plus" onclick="promptBox()">
+                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
                 </button>
             </div>
         <h3>Seafood</h3>
@@ -140,8 +140,8 @@
                     <div class="ingredientsName">Crab</div>
                 </div>
 
-                <button class="plus card-highlight">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign">
+                <button class="plus" onclick="promptBox()">
+                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
                 </button>
             </div>
         <h3>Carbs</h3>
@@ -170,8 +170,8 @@
                     <div class="ingredientsName">Tortilla</div>
                 </div>
 
-                <button class="plus card-highlight">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign">
+                <button class="plus" onclick="promptBox()">
+                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
                 </button>
             </div>
         <h3>Diaries</h3>
@@ -200,13 +200,14 @@
                     <div class="ingredientsName">Yogurt</div>
                 </div>
 
-                <button class="plus card-highlight">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign">
+                <button class="plus" onclick="promptBox()">
+                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
                 </button>
             </div>
 
             <!-- Selected Items -->
-            <div>
+            <div id="selected">
+                <h3>Selected Ingredients</h3>
                 <p id="msg1" class="selectedItem" style="display:none">Tomato</p>
                 <p id="msg2" class="selectedItem" style="display:none">Onion</p>
                 <p id="msg3" class="selectedItem" style="display:none">Spinach</p>

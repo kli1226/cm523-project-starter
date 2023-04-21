@@ -50,16 +50,6 @@ function printOrder(selections){
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-// function checkBox() {
-//     var checkBox = document.getElementsByTagName('input');
-//     var text = document.getElementById("text");
-//     if (checkBox.checked == true){
-//        text.style.display = "block";
-//     } else {
-//        text.style.display = "none";
-//     }
-// }
-
 function checkBox(id, pid) {
     var checkBox = document.getElementById(id);
     var text = document.getElementById(pid);
@@ -69,3 +59,16 @@ function checkBox(id, pid) {
        text.style.display = "none";
     }
 }
+
+//
+
+function promptBox() {
+    let text;
+    let person = prompt("Please enter the ingredient:", "");
+    if (person == null || person == "") {
+      text = "User cancelled the prompt.";
+    } else {
+      text = person;
+    }
+    document.getElementById("selected").innerHTML = text;
+  }

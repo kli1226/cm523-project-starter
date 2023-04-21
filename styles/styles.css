@@ -223,3 +223,11 @@ input[type="checkbox"]{
     color: #E7451C;
     border-radius: .5rem;
 }
+
+.plus:hover{
+    transform: scale(1.02)
+} 
+
+.plus:active{
+    transform: scale(.97)
+}

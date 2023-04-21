@@ -216,3 +216,10 @@ input[type="checkbox"]{
 #print-btn:hover{
   background-color: #d4360e;
 } 
+
+.selectedItem{
+    display: flex;
+    flex-direction: row;
+    color: #E7451C;
+    border-radius: .5rem;
+}

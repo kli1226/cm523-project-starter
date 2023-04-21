@@ -11,8 +11,8 @@ const meat = Array.from(document.getElementsByName('meatChoices'));
 const seafood = Array.from(document.getElementsByName('seafoodChoices'));
 const carbs = Array.from(document.getElementsByName('carbsChoices'));
 const diaries = Array.from(document.getElementsByName('diariesChoices'));
-// const btn = document.getElementById('print-btn');
-// btn.addEventListener('click', getSelections);
+const btn = document.getElementById('print-btn');
+btn.addEventListener('click', getSelections);
 
 function getSelections(){ 
     vegetables.forEach(item => {
@@ -60,7 +60,7 @@ function checkBox(id, pid) {
     }
 }
 
-//
+//////////////////////////////////////////////////////////////////////////////////////////
 
 function promptBox() {
     let text;

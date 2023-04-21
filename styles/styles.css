@@ -9,11 +9,11 @@ body {
 /* NAV BAR */
 
 nav {
-    background-color: #E7451C;
+    background-color: #e33b11;
     text-align: right;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     margin: 0;
-    /* overflow: hidden; */
+    /* overflow: visible; */
     position: fixed;
     top: 0;
     width: 100%;
@@ -212,11 +212,6 @@ input[type="checkbox"]{
   justify-content: center;
   align-items: center;
 }
-/* 
-#print-btn:hover,
-#print-btn:focus {
-  background-color: #d4360e;
-}  */
 
 #print-btn:hover{
   background-color: #d4360e;

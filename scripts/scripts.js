@@ -11,8 +11,8 @@ const meat = Array.from(document.getElementsByName('meatChoices'));
 const seafood = Array.from(document.getElementsByName('seafoodChoices'));
 const carbs = Array.from(document.getElementsByName('carbsChoices'));
 const diaries = Array.from(document.getElementsByName('diariesChoices'));
-const btn = document.getElementById('print-btn');
-btn.addEventListener('click', getSelections);
+// const btn = document.getElementById('print-btn');
+// btn.addEventListener('click', getSelections);
 
 function getSelections(){ 
     vegetables.forEach(item => {
@@ -50,12 +50,21 @@ function printOrder(selections){
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function checkBox() {
-    var checkBox = document.getElementsByTagName('input');
-    var text = document.getElementById("text");
+// function checkBox() {
+//     var checkBox = document.getElementsByTagName('input');
+//     var text = document.getElementById("text");
+//     if (checkBox.checked == true){
+//        text.style.display = "block";
+//     } else {
+//        text.style.display = "none";
+//     }
+// }
+
+function checkBox(id, pid) {
+    var checkBox = document.getElementById(id);
+    var text = document.getElementById(pid);
     if (checkBox.checked == true){
-       text.style.display = "block";
-    //    <p id="text" style="display:none">Tomato</p>
+        text.style.display = "block";
     } else {
        text.style.display = "none";
     }

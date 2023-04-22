@@ -15,10 +15,7 @@ const diaries = Array.from(document.getElementsByName('diariesChoices'));
 // btn.addEventListener('click', getSelections);
 
 let searchBtn = document.querySelector('#search');
-searchBtn.addEventListener('click', ()=>{
-    console.log('button pressed')
-    sendApiRequest()
-})
+searchBtn.addEventListener('click', loadRecipes);
 
 function getSelections(){ 
     vegetables.forEach(item => {
@@ -81,12 +78,29 @@ function promptBox() {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-// Fetch data from the API
-async function sendApiRequest(){
-    let APP_ID = "4b86d843";
-    let API_KEY = "422e872a0aaedc20999433998db2b016";
-    let response = await fetch(`https://api.edamam.com/api/recipes/v2?app_id=${APP_ID}&app_key=${API_KEY}&q=chicken`);
-    console.log(response);
-    let data = await response.json();
-    console.log(data);
+const APP_ID = "4b86d843";
+const API_KEY = "422e872a0aaedc20999433998db2b016";
+const baseURL = `https://api.edamam.com/api/recipes/v2?app_id=${APP_ID}&app_key=${API_KEY}`;
+const recipeContainer = document.getElementById("recipe-container");
+
+function loadRecipes(){
+    const url =`https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=4b86d843&app_key=422e872a0aaedc20999433998db2b016&limit=4`;
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => renderRecipes(data.hits))
+        .catch((error) => console.log(error));
 }
+
+const renderRecipes = (recipeList=[]) => {
+    recipeList.forEach((recipeObj) => {
+        const {label:recipeTitle, image:recipeImage,} = recipeObj.recipe;
+        const htmlStr = `
+        <div class="recipe">
+            <div class="recipe-titles">${recipeTitle}</div>
+            <div class="recipe-image">
+                <img src = ${recipeImage} alt="Recipe"/>
+            </div>
+        </div>`;
+        recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
+    });
+};

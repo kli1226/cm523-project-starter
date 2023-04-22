@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-/* NAV BAR */
+/*************************************** NAV BAR ***************************************/
 
 nav {
     background-color: #e33b11;
@@ -37,7 +37,7 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
-/* MAIN.HTML */
+/*************************************** MAIN PAGE ***************************************/
 
 .header{
     background-color: #EB4F27;
@@ -227,4 +227,12 @@ input[type="checkbox"]{
 
 .plus:active{
     transform: scale(.97)
+}
+
+#recipe-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
 }

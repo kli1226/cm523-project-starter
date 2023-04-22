@@ -1,6 +1,3 @@
-/* ===== YOUR CSS GOES HERE ===== */
-/* ===== START WITH GLOBAL STYLES THEN USE MEDIA QUERIES FOR LAYOUT ADJUSTMENTS ===== */
-
 body {
     background: #F9F7F2;
     margin: 0px;
@@ -13,10 +10,10 @@ nav {
     text-align: right;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     margin: 0;
-    /* overflow: visible; */
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1; /* this makes sure that the elements don't go above the nav bar */
 }
 
 nav ul{

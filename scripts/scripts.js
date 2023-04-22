@@ -11,8 +11,14 @@ const meat = Array.from(document.getElementsByName('meatChoices'));
 const seafood = Array.from(document.getElementsByName('seafoodChoices'));
 const carbs = Array.from(document.getElementsByName('carbsChoices'));
 const diaries = Array.from(document.getElementsByName('diariesChoices'));
-const btn = document.getElementById('print-btn');
-btn.addEventListener('click', getSelections);
+// const btn = document.getElementById('print-btn');
+// btn.addEventListener('click', getSelections);
+
+let searchBtn = document.querySelector('#search');
+searchBtn.addEventListener('click', ()=>{
+    console.log('button pressed')
+    sendApiRequest()
+})
 
 function getSelections(){ 
     vegetables.forEach(item => {
@@ -72,3 +78,15 @@ function promptBox() {
     }
     document.getElementById("selected").innerHTML = text;
   }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// Fetch data from the API
+async function sendApiRequest(){
+    let APP_ID = "4b86d843";
+    let API_KEY = "422e872a0aaedc20999433998db2b016";
+    let response = await fetch(`https://api.edamam.com/api/recipes/v2?app_id=${APP_ID}&app_key=${API_KEY}&q=chicken`);
+    console.log(response);
+    let data = await response.json();
+    console.log(data);
+}

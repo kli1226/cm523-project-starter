@@ -292,23 +292,37 @@ input[type="checkbox"]{
 .meal-result{
     margin-top: 4rem;
 }
+
 #meal{
     margin: 2.4rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 40px;
 }
+
 .meal-item{
     border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-    overflow: hidden;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
     margin: 2rem 0;
-    width: 200px;
+    width: 210px;
 }
+
+.meal-item:hover{
+    transform: scale(1.02)
+} 
+
+.meal-item:active{
+    transform: scale(.97)
+}
+
 .meal-img img{
     width: 100%;
     display: block;
+}
+
+img{
+    width: 100%;
 }
 .meal-name{
     padding: 1.5rem 0.5rem;

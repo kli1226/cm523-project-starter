@@ -19,14 +19,14 @@ function loadRecipes(){
 
 const renderRecipes = (recipeList=[]) => {
     recipeList.forEach((recipeObj) => {
-        const {label:recipeTitle, image:recipeImage,} = recipeObj.recipe;
+        const {label:recipeTitle, image:recipeImage, url:recipeLink} = recipeObj.recipe;
         const htmlStr = `
         <div class="recipe">
             <div class="recipe-image">
                 <img src = ${recipeImage} alt="Recipe"/>
             </div>
             <div class="recipe-title">${recipeTitle}</div>
-            <a href="#" class="recipe-btn">Get Recipe</a>
+            <a href="${recipeLink}" target="_blank" class="recipe-btn">Get Recipe</a>
         </div>`;
         recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
     });

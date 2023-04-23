@@ -14,7 +14,7 @@ const diaries = Array.from(document.getElementsByName('diariesChoices'));
 // const btn = document.getElementById('print-btn');
 // btn.addEventListener('click', getSelections);
 
-let searchBtn = document.querySelector('#search');
+let searchBtn = document.querySelector('#search-btn');
 searchBtn.addEventListener('click', loadRecipes);
 
 function getSelections(){ 

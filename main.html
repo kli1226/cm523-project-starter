@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 <body>
     <nav>
         <ul>
@@ -20,6 +21,16 @@
     <div class="header">
         <h1>What's in your fridge?</h1>
         <p>Click on a card to select. You can add an ingredient that is not listed by clicking the plus icon.</p>
+        <!-- <div class="search">
+            <input type="text" placeholder="Search an Ingredient" autofocus>
+            <button id="search-btn" class="btn">Go</button>
+        </div> -->
+        <div class="meal-search-box">
+            <input type="text" class="search-control" placeholder="Search an Ingredient" id="search-input">
+            <button type="submit" class="search-btn btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
     </div>
     <div class="container">
         <h3>Vegetables</h3>
@@ -233,8 +244,7 @@
                 <p id="msg24" class="selectedItem" style="display:none">Cheese</p>
                 <p id="msg25" class="selectedItem" style="display:none">Yogurt</p>
             </div>
-        <!-- <button id="print-btn">Generate Recipes</button> -->
-        <button id="search">Generate Recipes</button>
+        <!-- <button id="search">Generate Recipes</button> -->
 
         <div id="recipe-container"></div>
     </div>

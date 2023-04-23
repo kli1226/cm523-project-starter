@@ -64,6 +64,50 @@ p{ /* Click on a card to select ... */
     margin-top: 0px;
 }
 
+/* SEARCH BOX */
+
+.meal-search-box{
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+    width: 400px;
+}
+
+.search-control,
+.search-btn{
+    width: 100%;
+}
+
+.search-control{
+    padding: 0 1rem;
+    padding-left: 40px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: 0;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border:#FFFFFF;
+}
+
+.search-control::placeholder{
+    color:#465C38;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-btn{
+    color: white;
+    border: none;
+    background-color: #465C38;
+    width: 75px;
+    height: 55px;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.search-btn:hover{
+    background:#d4360e;
+}
+
 /************************************************************/
 
 .container{

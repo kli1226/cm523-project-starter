@@ -89,6 +89,7 @@ function loadRecipes(){
         .then((response) => response.json())
         .then((data) => renderRecipes(data.hits))
         .catch((error) => console.log(error));
+        window.open("recipe.html", '_blank');
 }
 
 const renderRecipes = (recipeList=[]) => {

@@ -14,8 +14,38 @@ const diaries = Array.from(document.getElementsByName('diariesChoices'));
 // const btn = document.getElementById('print-btn');
 // btn.addEventListener('click', getSelections);
 
-let searchBtn = document.querySelector('#search-btn');
-searchBtn.addEventListener('click', loadRecipes);
+let searchBtn = document.getElementById('search-btn');
+searchBtn.addEventListener('click', generateRecipes);
+const mealList = document.getElementById('meal');
+
+function generateRecipes(){
+    let searchInputTxt = document.getElementById('search-input').value.trim();
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+    .then(response => response.json())
+    .then(data => {
+        let html = "";
+        if(data.meals){
+            data.meals.forEach(meal => {
+                html += `
+                    <div class = "meal-item" data-id = "${meal.idMeal}">
+                        <div class = "meal-img">
+                            <img src = "${meal.strMealThumb}" alt = "food">
+                        </div>
+                        <div class = "meal-name">
+                            <h3>${meal.strMeal}</h3>
+                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                        </div>
+                    </div>
+                `;
+            });
+            mealList.classList.remove('notFound');
+        } else{
+            html = "Sorry, we didn't find any meal!";
+            mealList.classList.add('notFound');
+        }
+        mealList.innerHTML = html;
+    });
+}
 
 function getSelections(){ 
     vegetables.forEach(item => {

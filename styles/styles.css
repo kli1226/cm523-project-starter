@@ -275,12 +275,13 @@ input[type="checkbox"]{
 }
 
 #meal{
-    margin: 2.4rem 0;
+
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     gap: 40px;
-    margin: 2rem;
+    margin-top: 50px;
+    margin-left: 110px;
 } 
 
 .meal-result{ /* change variable name*/

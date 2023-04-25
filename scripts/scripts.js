@@ -1,39 +1,33 @@
-const ingredients = {
-    vegetables: null,
-    meat: null,
-    seafood: null,
-    carbs: null,
-    diaries: null,
-}
-
-const vegetables = Array.from(document.getElementsByName('veggieChoices'));
-const meat = Array.from(document.getElementsByName('meatChoices'));
-const seafood = Array.from(document.getElementsByName('seafoodChoices'));
-const carbs = Array.from(document.getElementsByName('carbsChoices'));
-const diaries = Array.from(document.getElementsByName('diariesChoices'));
-// const btn = document.getElementById('print-btn');
-// btn.addEventListener('click', getSelections);
-
-let searchBtn = document.getElementById('search-btn');
-searchBtn.addEventListener('click', generateRecipes);
+const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
+const recipeDetails = document.querySelector('.meal-details-content');
+const closeBtn = document.getElementById('close-btn');
 
-function generateRecipes(){
-    let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+/* Event Listeners */
+searchBtn.addEventListener('click', getRecipes);
+mealList.addEventListener('click', getMealRecipe);
+closeBtn.addEventListener('click', () => {
+    recipeDetails.parentElement.classList.remove('showRecipe');
+});
+
+/* Call the API to get recipes' ids, names, and images */
+function getRecipes(){
+    let searchInput = document.getElementById('search-input').value.trim();
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInput}`)
     .then(response => response.json())
     .then(data => {
         let html = "";
         if(data.meals){
+            html += `<div class="search-title">Your Search Results:</div>`
             data.meals.forEach(meal => {
                 html += `
-                    <div class = "meal-item" data-id = "${meal.idMeal}">
-                        <div class = "meal-img">
-                            <img src = "${meal.strMealThumb}" alt = "food">
+                    <div class="recipe-item" data-id="${meal.idMeal}">
+                        <div class="recipe-img">
+                            <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
                         </div>
-                        <div class = "meal-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                        <div class="recipe-title">
+                            <div class="recipe-name">${meal.strMeal}</div>
+                            <a href="#" class="recipe-btn">Get Recipe</a>
                         </div>
                     </div>
                 `;
@@ -47,41 +41,37 @@ function generateRecipes(){
     });
 }
 
-function getSelections(){ 
-    vegetables.forEach(item => {
-      if(item.checked) {
-        ingredients.vegetables = item.value;
-      }
-    });
-    meat.forEach(item => {
-        if(item.checked) {
-          ingredients.meat = item.value;
-        }
-    });
-    seafood.forEach(item => {
-        if(item.checked) {
-          ingredients.seafood = item.value;
-        }
-    });
-    carbs.forEach(item => {
-        if(item.checked) {
-          ingredients.carbs = item.value;
-        }
-    });
-    diaries.forEach(item => {
-        if(item.checked) {
-          ingredients.diaries = item.value;
-        }
-    });
-    console.log(ingredients);
-    printOrder(ingredients);
-  }
-  
-function printOrder(selections){
-    result.textContent = `Vegetables: ${selections.vegetables} Meat: ${selections.meat} Seafood: ${selections.seafood}`;
+/* Call the API to get recipes' YouTube links and instructions */
+function getMealRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains('recipe-btn')){
+        let mealItem = e.target.parentElement.parentElement;
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
+        .then(response => response.json())
+        .then(data => getRecipeDetails(data.meals));
+    }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
+function getRecipeDetails(recipe){
+    recipe = recipe[0];
+    let html = `
+        <div class="recipe-name-title">${recipe.strMeal}</div>
+        <div class="recipe-link">
+            <a href="${recipe.strYoutube}" target="_blank">Watch Video</a>
+        </div>
+        <div class="recipe-details-img">
+            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}">
+        </div>
+        <div class="instructions">
+            <h4>Instructions:</h4>
+            <p class="instruction-details">${recipe.strInstructions}</p>
+        </div>
+    `;
+    recipeDetails.innerHTML = html;
+    recipeDetails.parentElement.classList.add('showRecipe');
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function checkBox(id, pid) {
     var checkBox = document.getElementById(id);
@@ -92,47 +82,3 @@ function checkBox(id, pid) {
        text.style.display = "none";
     }
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-function promptBox() {
-    let text;
-    let person = prompt("Please enter the ingredient:", "");
-    if (person == null || person == "") {
-      text = "User cancelled the prompt.";
-    } else {
-      text = person;
-    }
-    document.getElementById("selected").innerHTML = text;
-  }
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-const APP_ID = "4b86d843";
-const API_KEY = "422e872a0aaedc20999433998db2b016";
-const baseURL = `https://api.edamam.com/api/recipes/v2?app_id=${APP_ID}&app_key=${API_KEY}`;
-const recipeContainer = document.getElementById("recipe-container");
-
-function loadRecipes(){
-    const url =`https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=4b86d843&app_key=422e872a0aaedc20999433998db2b016&limit=4`;
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => renderRecipes(data.hits))
-        .catch((error) => console.log(error));
-        //link the search button to recipe.html
-        // window.open("recipe.html", '_blank'); 
-}
-
-const renderRecipes = (recipeList=[]) => {
-    recipeList.forEach((recipeObj) => {
-        const {label:recipeTitle, image:recipeImage,} = recipeObj.recipe;
-        const htmlStr = `
-        <div class="recipe">
-            <div class="recipe-titles">${recipeTitle}</div>
-            <div class="recipe-image">
-                <img src = ${recipeImage} alt="Recipe"/>
-            </div>
-        </div>`;
-        recipeContainer.insertAdjacentHTML("beforeend", htmlStr);
-    });
-};

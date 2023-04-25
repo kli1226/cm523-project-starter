@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-/*************************************** NAV BAR ***************************************/
+/***************** START NAV BAR *****************/
 
 nav {
     background-color: #e33b11;
@@ -37,7 +37,9 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
-/*************************************** MAIN PAGE ***************************************/
+/***************** END NAV BAR *****************/
+
+/***************** START HEADER *****************/
 
 .header{
     background-color: #EB4F27;
@@ -108,7 +110,14 @@ p{ /* Click on a card to select ... */
     background:#d4360e;
 }
 
-/************************************************************/
+input[type=text]{
+    font-family: 'Montserrat', sans-serif;
+    color: #465C38;
+}
+
+/***************** END HEADER *****************/
+
+/****************** START ILLUSTRATIONS OF THE INGREDIENTS *******************/
 
 .container{
     padding-left: 110px;
@@ -127,7 +136,6 @@ h3{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    /* justify-content: center; */
     gap: 40px;
 }
 
@@ -163,13 +171,19 @@ button{
     align-items: center;
 }
 
+.plus:hover{
+    transform: scale(1.02)
+} 
+
+.plus:active{
+    transform: scale(.97)
+}
+
 .plusSign{
     max-width: 80px;
     margin-bottom: auto;
     margin-top: auto;
 }
-
-/* Illustrations of the ingredients */
 
 img {
     display: flex;
@@ -234,30 +248,6 @@ input[type="checkbox"]{
     margin-top: 15px;
 }
 
-#print-btn {
-  background-color: #E7451C;
-  border-radius: 10px;
-  border-style: none;
-  color: #FFFFFF;
-  display: flex;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  height: 40px;
-  margin-top: 100px;
-  margin-bottom: 40px;
-  padding: 24px 40px 24px 40px;
-  /* position: relative; */
-  text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-}
-
-#print-btn:hover{
-  background-color: #d4360e;
-} 
-
 .selectedItem{
     display: flex;
     flex-direction: row;
@@ -265,32 +255,23 @@ input[type="checkbox"]{
     border-radius: .5rem;
 }
 
-.plus:hover{
-    transform: scale(1.02)
-} 
+/****************** END ILLUSTRATIONS OF THE INGREDIENTS *******************/
 
-.plus:active{
-    transform: scale(.97)
-}
+/****************** START SEARCH RESULTS *******************/
 
 #recipe-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-
 }
 
-.notFound{
-    grid-template-columns: 1fr!important;
-    color: var(--tenne-tawny);
-    font-size: 1.8rem;
-    font-weight: 600;
-    width: 100%;
-}
-
-.meal-result{
-    margin-top: 4rem;
+.search-title{
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #2D2D2D;
 }
 
 #meal{
@@ -299,34 +280,211 @@ input[type="checkbox"]{
     flex-flow: row wrap;
     align-items: center;
     gap: 40px;
+    margin: 2rem;
+} 
+
+.meal-result{ /* change variable name*/
+    display: flex;
 }
 
-.meal-item{
-    border-radius: 1rem;
-    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
-    margin: 2rem 0;
+/* the entire card */
+.recipe-item{
+    background: #F9F7F2;
+    font-size: 2em;
+    font-weight: bold;
     width: 210px;
+    border: 1px solid #465C38;
+    border-radius: 10px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.meal-item:hover{
+.recipe-item:hover{
     transform: scale(1.02)
 } 
 
-.meal-item:active{
+.recipe-item:active{ 
     transform: scale(.97)
+} 
+
+.recipe-title{
+    display: flex;
+    flex-direction: column;
 }
 
-.meal-img img{
+.recipe-name{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center
+}
+
+.recipe-img{
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: center;
+    height: 150px;
 }
 
 img{
-    width: 100%;
+    border-radius: 1rem;
 }
-.meal-name{
-    padding: 1.5rem 0.5rem;
+
+.recipe-btn{
+    display: block;
+    background-color: #465C38;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    width: 140px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 2rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 1rem auto;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
 }
-.meal-name h3{
-    font-size: 1.4rem;
+
+.recipe-btn:hover{
+    background-color: #e33b11;
 }
+
+.meal-details{
+    position: fixed;
+    max-width: 800px;
+    max-height: 500px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+.recipe-name-title{
+    font-family: 'Cinzel', serif;
+    color:#465C38;
+    font-weight: 400;
+    font-size: 36px;
+    margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.recipe-category{
+    background: #e33b11;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 0.3rem;
+}
+
+.instructions{
+    color:#465C38;
+}
+
+h4{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color:#465C38;
+    margin-bottom: 20px;
+}
+
+.recipe-details-img{
+    max-width: 200px;
+    max-height: 300px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instruction-details{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color:#465C38;
+}
+
+/* Link to Video */
+.recipe-link a{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    display: block;
+    background-color: #465C38;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    width: 140px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 2rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 1rem auto;
+}
+
+.recipe-link a:hover{
+    background-color: #e33b11;
+}
+
+.close-btn{
+    margin-left: 800px;
+    color:#465C38;
+    background-color: white;
+    top: 2rem;
+    font-size: 30px;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.close-btn:hover{
+    color: #e33b11;
+}
+
+.notFound{
+    grid-template-columns: 1fr!important;
+    color: #e33b11;
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.showRecipe{
+    display: block;
+}
+
+/****************** END SEARCH RESULTS *******************/

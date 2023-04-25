@@ -21,12 +21,8 @@
     <div class="header">
         <h1>What's in your fridge?</h1>
         <p>Type an ingredient in the search bar, or select a card down below!</p>
-        <!-- <div class="search">
-            <input type="text" placeholder="Search an Ingredient" autofocus>
-            <button id="search-btn" class="btn">Go</button>
-        </div> -->
         <div class="meal-search-box">
-            <input type="text" class="search-control" placeholder="Search an Ingredient" id="search-input">
+            <input type="text" autocomplete="off" class="search-control" placeholder="Search an Ingredient" id="search-input">
             <button type="submit" class="search-btn btn" id="search-btn">
                 <i class="fas fa-search"></i>
             </button>
@@ -153,10 +149,6 @@
                     <img class="biggerImg" src="images/bacon.png" alt="Bacon">
                     <div class="ingredientsName">Bacon</div>
                 </div>
-
-                <button class="plus" onclick="promptBox()">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
-                </button>
             </div>
         <h3>Seafood</h3>
              <div class="ingredients">
@@ -183,10 +175,6 @@
                     <img src="images/crab.png" alt="Crab">
                     <div class="ingredientsName">Crab</div>
                 </div>
-
-                <button class="plus" onclick="promptBox()">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
-                </button>
             </div>
         <h3>Carbs</h3>
             <div class="ingredients">
@@ -213,10 +201,6 @@
                     <img class="biggerImg" src="images/tortilla.png" alt="Tortilla">
                     <div class="ingredientsName">Tortilla</div>
                 </div>
-
-                <button class="plus" onclick="promptBox()">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
-                </button>
             </div>
         <h3>Diaries</h3>
             <div class="ingredients">
@@ -243,10 +227,6 @@
                     <img class="biggerImg" src="images/yogurt.png" alt="Yogurt">
                     <div class="ingredientsName">Yogurt</div>
                 </div>
-
-                <button class="plus" onclick="promptBox()">
-                    <img class="plusSign" src="images/plus.png" alt="Plus Sign" >
-                </button>
             </div>
 
             <!-- Selected Items -->

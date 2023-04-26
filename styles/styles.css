@@ -246,6 +246,7 @@ input[type="checkbox"]{
     border:1px solid #465C38;
     margin-left: 150px;
     margin-top: 15px;
+    position: relative;
 }
 
 .selectedItem{

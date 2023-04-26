@@ -73,9 +73,17 @@ function getRecipeDetails(recipe){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// const box = document.querySelectorAll('input[type=checkbox]');
-// console.log(box);
-// box.addEventListener('click', checkBox(box.id, box.value));
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        checkBox(checkbox.id, checkbox.value);
+    } else {
+      console.log(`The checkbox is not checked.`);
+    }
+  });
+});
 
 function checkBox(id, val) {
     var box = document.getElementById(id);
@@ -83,31 +91,31 @@ function checkBox(id, val) {
     if (box.checked == true){
         window.scrollTo({ top: 500, behavior: 'smooth' });
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${val}`)
-    .then(response => response.json())
-    .then(data => {
-        let html = "";
-        if(data.meals){
-            html += `<div class="search-title">Your Search Results:</div>`
-            data.meals.forEach(meal => {
-                html += `
-                    <div class="recipe-item" data-id="${meal.idMeal}">
-                        <div class="recipe-img">
-                            <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if(data.meals){
+                html += `<div class="search-title">Your Search Results:</div>`
+                data.meals.forEach(meal => {
+                    html += `
+                        <div class="recipe-item" data-id="${meal.idMeal}">
+                            <div class="recipe-img">
+                                <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                            </div>
+                            <div class="recipe-title">
+                                <div class="recipe-name">${meal.strMeal}</div>
+                                <a href="#" class="recipe-btn">Get Recipe</a>
+                            </div>
                         </div>
-                        <div class="recipe-title">
-                            <div class="recipe-name">${meal.strMeal}</div>
-                            <a href="#" class="recipe-btn">Get Recipe</a>
-                        </div>
-                    </div>
-                `;
-            });
-            mealList.classList.remove('notFound');
-        } else{
-            html = "Sorry, we didn't find any meal!";
-            mealList.classList.add('notFound');
+                    `;
+                });
+                mealList.classList.remove('notFound');
+            } else{
+                html = "Sorry, we didn't find any meal!";
+                mealList.classList.add('notFound');
+            }
+            mealList.innerHTML = html;
+        });
+        box.checked = false;
         }
-        mealList.innerHTML = html;
-    });
-    box.checked = false;
     }
-}

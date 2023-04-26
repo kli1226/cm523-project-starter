@@ -81,6 +81,7 @@ function checkBox(id, val) {
     var box = document.getElementById(id);
     console.log(val);
     if (box.checked == true){
+        window.scrollTo({ top: 500, behavior: 'smooth' });
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${val}`)
     .then(response => response.json())
     .then(data => {
@@ -107,5 +108,6 @@ function checkBox(id, val) {
         }
         mealList.innerHTML = html;
     });
+    box.checked = false;
     }
 }

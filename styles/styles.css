@@ -572,14 +572,16 @@ h4{
 .about_item h3{
     color: white;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .about_item .dark{
     color: #2D2D2D;
 }
 
-/* .about_item .intro{
-    margin: 10px 20px 10px 20px;
-    /* justify-content: center;
-    align-items: center; */
+.about_item .brief_intro{
+    margin: 20px 50px 20px 50px;
+    display: flex;
+    flex-direction: column;
+}
   

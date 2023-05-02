@@ -665,7 +665,7 @@ img.about_profile{
 
 /****************** END ABOUT PAGE *******************/
 
-/****************** START HO PAGE *******************/
+/****************** START HOME PAGE *******************/
 
 .home_img{
     margin-top: 300px;
@@ -676,7 +676,39 @@ img.home_img{
     max-width: 500px;
 }
 
-/****************** END HO PAGE *******************/
+.home_container h2{
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 60px;
+    color: #2D2D2D;
+    display: block;
+    margin-bottom: 10px;
+    width: 630px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.get_started{
+    color:white;
+    font-size: 18px;
+    background-color: #293E17;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 18px 40px 18px 40px;
+    border-radius: 10px;
+    display: flex;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.get_started:hover{
+    background-color: #e33b11;
+}
+
+/****************** END HOME PAGE *******************/
 
 /****************** START MEDIA QUERY *******************/
 

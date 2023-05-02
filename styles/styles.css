@@ -292,7 +292,6 @@ label{
 }
 
 #meal{
-
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -310,10 +309,10 @@ label{
     background: #F9F7F2;
     font-size: 2em;
     font-weight: bold;
-    width: 210px;
+    width: 270px;
     border: 1px solid #465C38;
     border-radius: 10px;
-    height: 270px;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,7 +338,8 @@ label{
     font-size: 18px;
     margin-top: 20px;
     text-align: center;
-    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 .recipe-img{
@@ -601,7 +601,8 @@ img.about_profile{
 
 .brief_intro p{
     font-size: 18px;
-    line-height: 30px;
+    line-height: 35px;
+    margin-top: 20px;
 }
 
 .brief_intro_header{

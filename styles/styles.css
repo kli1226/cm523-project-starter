@@ -338,7 +338,8 @@ label{
     font-weight: 400;
     font-size: 18px;
     margin-top: 20px;
-    text-align: center
+    text-align: center;
+    line-clamp: 1;
 }
 
 .recipe-img{
@@ -550,7 +551,9 @@ h4{
     background: #F9F7F2;
     border: 1px solid #465C38;
     margin-top: 20px;
-    gap: 70px;
+    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .about_item:nth-child(4){ 
@@ -591,13 +594,14 @@ img.about_profile{
 }
 
 .about_item .brief_intro{
-    margin: 20px 50px 20px 50px;
+    margin: 20px 60px 20px 60px;
     display: flex;
     flex-direction: column;
 }
 
 .brief_intro p{
     font-size: 18px;
+    line-height: 30px;
 }
 
 .brief_intro_header{
@@ -605,14 +609,27 @@ img.about_profile{
     flex-direction: row;
 }
 
-.fa{
+.fa.fa-envelope{
     font-size: 36px;
     color:#465C38;
-    margin-right: 30px;
     display: inline;
-    /* justify-content: center;
-    align-items: center; */
 }
+
+.fa.fa-envelope:hover{
+    color: #e33b11;
+}
+
+.fa.fa-linkedin-square{
+    font-size: 36px;
+    color:#465C38;
+    display: inline;
+    margin-left: 20px;
+}
+
+.fa.fa-linkedin-square:hover{
+    color: #e33b11;
+}
+
 
 /* DOCUMENTS */
 .documents{
@@ -634,7 +651,7 @@ img.about_profile{
 .documents > ul > li > a {
     color:#465C38;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 15px;
     margin-bottom: 15px;
     display: block;
@@ -660,11 +677,10 @@ img.about_profile{
 .credits > ul > li > a {
     color:#465C38;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 15px;
     margin-bottom: 15px;
     display: block;
     line-height: 20px;
-    /* text-decoration: none; */
 }
   

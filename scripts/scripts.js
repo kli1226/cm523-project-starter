@@ -119,3 +119,13 @@ function checkBox(id, val) {
         box.checked = false;
         }
     }
+
+///////////////
+
+function changeImage(img) {
+    if (img.src.includes("images/home_before.png")) {
+      img.src = "images/home_after.png";
+    } else {
+      img.src = "images/home_before.png";
+    }
+  }

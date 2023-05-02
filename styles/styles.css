@@ -167,33 +167,6 @@ button{
     padding: 0px;
 }
 
-.plus{
-    background: #E7E7DF;
-    font-size: 2em;
-    font-weight: bold;
-    width: 210px;
-    border: none;
-    border-radius: 10px;
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.plus:hover{
-    transform: scale(1.02)
-} 
-
-.plus:active{
-    transform: scale(.97)
-}
-
-.plusSign{
-    max-width: 80px;
-    margin-bottom: auto;
-    margin-top: auto;
-}
-
 img {
     display: flex;
     flex-direction: column;
@@ -317,6 +290,8 @@ label{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .recipe-item:hover{
@@ -340,6 +315,7 @@ label{
     text-align: center;
     overflow: hidden;
     text-overflow: clip;
+    line-height: 1.5rem;
 }
 
 .recipe-img{
@@ -520,7 +496,7 @@ h4{
 }
 
 .about_item{
-  background: #EB4F27;
+  background: #D4A981;
   font-size: 2em;
   font-weight: bold;
   width: 300px;
@@ -554,6 +530,8 @@ h4{
     gap: 50px;
     align-items: flex-start;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about_item:nth-child(4){ 
@@ -611,7 +589,7 @@ img.about_profile{
 }
 
 .fa.fa-envelope{
-    font-size: 36px;
+    font-size: 32px;
     color:#465C38;
     display: inline;
 }
@@ -621,7 +599,7 @@ img.about_profile{
 }
 
 .fa.fa-linkedin-square{
-    font-size: 36px;
+    font-size: 32px;
     color:#465C38;
     display: inline;
     margin-left: 20px;
@@ -642,7 +620,7 @@ img.about_profile{
 .documents ul{
     margin: 0;
     padding: 0;
-    margin-right: 80px;
+    margin-right: 60px;
 }
 
 .documents ul li {
@@ -684,4 +662,262 @@ img.about_profile{
     display: block;
     line-height: 20px;
 }
-  
+
+/****************** END ABOUT PAGE *******************/
+
+/****************** START HO PAGE *******************/
+
+.home_img{
+    margin-top: 300px;
+    max-width: 500px;
+}
+
+img.home_img{
+    max-width: 500px;
+}
+
+/****************** END HO PAGE *******************/
+
+/****************** START MEDIA QUERY *******************/
+
+@media screen and (max-width: 1100px){
+    .header{
+        background-color: #EB4F27;
+        padding-top: 150px;
+        padding-left: 110px;
+        padding-bottom: 30px;
+    }
+
+    h1{ /* What's in your fridge? */
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+        font-size: 60px;
+        color: white;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    p{ /* Click on a card to select ... */
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 40px;
+        color: white;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .card{
+        background: #F9F7F2;
+        font-size: 2em;
+        font-weight: bold;
+        width: 180px;
+        border: 1px solid #465C38;
+        border-radius: 10px;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ingredientsName{
+        display: flex;
+        flex-direction: column;
+        background-color:#465C38;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        width: 180px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 0px 0px 8px 8px;
+        margin-top: auto;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 850px){
+    .header{
+        background-color: #EB4F27;
+        padding-top: 120px;
+        padding-left: 60px;
+        padding-bottom: 30px;
+    }
+
+    h1{ /* What's in your fridge? */
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+        font-size: 50px;
+        color: white;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    p{ /* Click on a card to select ... */
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 40px;
+        color: white;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .card{
+        background: #F9F7F2;
+        font-size: 2em;
+        font-weight: bold;
+        width: 180px;
+        border: 1px solid #465C38;
+        border-radius: 10px;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ingredientsName{
+        display: flex;
+        flex-direction: column;
+        background-color:#465C38;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        width: 180px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 0px 0px 8px 8px;
+        margin-top: auto;
+        text-align: center;
+    }
+
+    .container{
+        padding-left: 60px;
+        padding-bottom: 80px;
+    }
+
+}
+
+@media screen and (max-width: 660px){
+    .header{
+        background-color: #EB4F27;
+        padding-top: 120px;
+        padding-left: 60px;
+        padding-bottom: 30px;
+    }
+
+    h1{ /* What's in your fridge? */
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+        font-size: 40px;
+        color: white;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    p{ /* Click on a card to select ... */
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 30px;
+        color: white;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .card{
+        background: #F9F7F2;
+        font-size: 2em;
+        font-weight: bold;
+        width: 180px;
+        border: 1px solid #465C38;
+        border-radius: 10px;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ingredientsName{
+        display: flex;
+        flex-direction: column;
+        background-color:#465C38;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        width: 180px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 0px 0px 8px 8px;
+        margin-top: auto;
+        text-align: center;
+    }
+
+    .container{
+        padding-left: 60px;
+        padding-bottom: 80px;
+    }
+
+}
+
+@media screen and (max-width: 1250px){
+    .about_item h3{
+        color: white;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    
+    .about_item .dark{
+        color: #2D2D2D;
+        font-size: 24px;
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+    }
+    
+    .about_item .brief_intro{
+        margin: 20px 60px 20px 60px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .brief_intro p{
+        font-size: 16px;
+        line-height: 30px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1030px){
+    .about_item h3{
+        color: white;
+        text-align: left;
+        margin-bottom: 5px;
+        font-size: 24px;
+    }
+    
+    .about_item .dark{
+        color: #2D2D2D;
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+    }
+    
+    .about_item .brief_intro{
+        margin: 20px 60px 20px 60px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .brief_intro p{
+        font-size: 14px;
+        line-height: 30px;
+        margin-top: 20px;
+    }
+}

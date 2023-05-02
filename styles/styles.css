@@ -667,19 +667,21 @@ img.about_profile{
 
 /****************** START HOME PAGE *******************/
 
-.home_img{
-    margin-top: 300px;
-    max-width: 500px;
+#home_img{
+    margin-top: 130px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-img.home_img{
-    max-width: 500px;
+#home_img img{
+    max-width: 350px;
 }
 
 .home_container h2{
     font-family: 'Cinzel', serif;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 52px;
     color: #2D2D2D;
     display: block;
     margin-bottom: 10px;
